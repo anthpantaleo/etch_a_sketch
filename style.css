@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Quicksand", sans-serif;
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e63946;
+  color: white;
+  font-weight: 600;
+  font-size: 32px;
+  padding: 10px;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: auto;
+  gap: 10px;
+  background-color: #e63946;
+  color: white;
+  font-weight: bold;
+  padding: 10px;
+  min-height: 50px;
+}
+
+.footerimage {
+  height: 25px;
+}
