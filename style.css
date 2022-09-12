@@ -23,6 +23,36 @@ body {
   padding: 10px;
 }
 
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem;
+}
+
+.board {
+  height: 58vh;
+  width: 58vh;
+  border: 1px solid black;
+  margin-bottom: 1rem;
+  box-shadow: 8px 8px rgba(0, 0, 0, 0.15);
+}
+
+.buttons {
+  border: 1px solid black;
+  width: 58vh;
+  height: 20vh;
+  box-shadow: 8px 8px rgba(0, 0, 0, 0.15);
+  display: flex;
+}
+
+.buttons div {
+  flex-direction: column;
+  flex: 1;
+  border: 1px solid black;
+}
+
 .footer {
   display: flex;
   align-items: center;
