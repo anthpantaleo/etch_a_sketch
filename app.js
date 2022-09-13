@@ -15,6 +15,7 @@ function addElement(num, divHeight, divWidth) {
     let div = document.createElement("div");
     div.style.height = `${divHeight}px`;
     div.style.width = `${divWidth}px`;
+    div.classList.add("boardDiv");
     board.appendChild(div);
   }
 }
