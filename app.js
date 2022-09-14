@@ -3,6 +3,8 @@ const eraserColor = "FFFFFF";
 
 const board = document.querySelector(".board");
 let color = "000000";
+let isRandom = false;
+let random = "000000";
 
 let gridSize = 25;
 let mouseDown = false;
@@ -45,29 +47,47 @@ boxes.forEach((item) => {
 });
 
 function changeColor(e) {
-  if (e.type === "mouseover" && mouseDown) {
-    e.target.style.backgroundColor = `#${color}`;
+  if (isRandom === 0) {
+    if (e.type === "mouseover" && mouseDown) {
+      e.target.style.backgroundColor = `#${color}`;
+    }
+  } else {
+    if (e.type === "mouseover" && mouseDown) {
+      e.target.style.backgroundColor = `#${random}`;
+    }
   }
 }
-
 const standardColor = document.querySelector(".standardColor");
 
 standardColor.addEventListener("click", function () {
   color = "000000";
+  isRandom = 0;
 });
 
 const eraser = document.querySelector(".eraser");
 
 eraser.addEventListener("click", function () {
   color = "FFFFFF";
+  isRandom = 0;
 });
-const rainbow = document.querySelector(".rainbow");
 
+const rainbow = document.querySelector(".rainbow");
 rainbow.addEventListener("click", randomColor);
 
 function randomColor() {
-  setInterval(() => {
-    let randomColor = Math.floor(Math.random() * 16777215).toString(16);
-    color = randomColor;
+  let interval = setInterval(() => {
+    let getRandomColor = Math.floor(Math.random() * 16777215).toString(16);
+
+    random = getRandomColor;
   }, 30);
+  return interval;
+  isRandom = 1;
 }
+
+const clearAll = document.querySelector(".clearAll");
+
+clearAll.addEventListener("click", function () {
+  boxes.forEach((item) => {
+    item.style.backgroundColor = `#${eraserColor}`;
+  });
+});
