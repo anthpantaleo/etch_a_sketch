@@ -3,10 +3,10 @@ const eraserColor = "FFFFFF";
 
 const board = document.querySelector(".board");
 let color = "000000";
-let isRandom = false;
+let isRandom = 0;
 let random = "000000";
 
-let gridSize = 25;
+let gridSize = 16;
 let mouseDown = false;
 document.body.onmousedown = () => (mouseDown = true);
 document.body.onmouseup = () => (mouseDown = false);
@@ -80,7 +80,6 @@ function randomColor() {
 
     random = getRandomColor;
   }, 30);
-  return interval;
   isRandom = 1;
 }
 
