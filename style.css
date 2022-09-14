@@ -12,6 +12,16 @@ body {
   flex-direction: column;
 }
 
+button {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
 .header {
   display: flex;
   align-items: center;
@@ -37,21 +47,101 @@ body {
   border: 1px solid black;
   margin-bottom: 1rem;
   box-shadow: 8px 8px rgba(0, 0, 0, 0.15);
+}
+
+.boardRow {
   display: flex;
+  flex: 1;
+  box-sizing: border-box;
+  border: none;
+}
+
+.rowDiv {
+  /* border: 0.05px solid black; */
 }
 
 .buttons {
-  border: 1px solid black;
   width: 58vh;
   height: 20vh;
   box-shadow: 8px 8px rgba(0, 0, 0, 0.15);
   display: flex;
+  gap: 5px;
+  border: 1px solid black;
+  flex-direction: column;
+  padding: 10px;
 }
 
 .buttons div {
-  flex-direction: column;
   flex: 1;
+  display: flex;
+}
+
+.buttoncolrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border: 1px solid black;
+}
+
+.buttoncolrow div {
+  display: flex;
+  justify-content: center;
+  font-weight: 400;
+}
+
+.standardColor {
+  height: 40px;
+  width: 40px;
+  background-color: black;
+  border-radius: 50%;
+  margin-left: -40px;
+}
+
+.eraser {
+  height: 40px;
+  width: 40px;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 50%;
+  margin-left: -40px;
+}
+
+.rainbow {
+  height: 40px;
+  width: 40px;
+  border: 1px solid black;
+  background-image: linear-gradient(
+    to right,
+    red,
+    orange,
+    yellow,
+    green,
+    blue,
+    indigo,
+    violet
+  );
+  color: white;
+  font-weight: bold;
+  border-radius: 50%;
+  margin-left: -40px;
+}
+
+.clearAll {
+  outline: none;
+  padding: 0 16px;
+  background-color: #fff;
+  border-radius: 0.25rem;
+  border: 1px solid #e63946;
+  color: black;
+  font-size: 13px;
+  line-height: 30px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.clearAll:hover {
+  background-color: #e63946;
+  color: white;
 }
 
 .footer {
