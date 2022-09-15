@@ -85,20 +85,20 @@ function randomColor() {
   isRandom = 1;
 }
 
-const clearAll = document.querySelector(".clearAll");
-
-let clearBoard = clearAll.addEventListener("click", function () {
-  boxes.forEach((item) => {
-    item.style.backgroundColor = `#${eraserColor}`;
-  });
-});
-
 const colorPicker = document.querySelector(".colorPicker");
 
 colorPicker.addEventListener("change", function (e) {
   preslice = e.target.value;
   color = preslice.slice(1);
   isRandom = 0;
+});
+
+const clearAll = document.querySelector(".clearAll");
+
+let clearBoard = clearAll.addEventListener("click", function () {
+  boxes.forEach((item) => {
+    item.style.backgroundColor = `#${eraserColor}`;
+  });
 });
 
 const gridChanger = document.querySelector(".gridSize");
@@ -123,10 +123,15 @@ function deleteGrid() {
 
 function addListeners() {
   let newBoxes = document.querySelectorAll(".rowDiv");
-  let newrows = document.querySelectorAll(".boardRow");
-
   newBoxes.forEach((item) => {
     item.addEventListener("mouseover", changeColor);
     item.addEventListener("mouseenter", changeColor);
   });
+  let newClearAll = document.querySelector(".clearAll");
+  newClearAll.addEventListener("click", function () {
+    newBoxes.forEach((elemt) => {
+      elemt.style.backgroundColor = `#${eraserColor}`;
+    });
+  });
+  return newBoxes;
 }
