@@ -103,10 +103,10 @@ colorPicker.addEventListener("change", function (e) {
 
 const gridChanger = document.querySelector(".gridSize");
 
-let forEachGridChange = gridChanger.addEventListener("change", function (e) {
+gridChanger.addEventListener("change", function (e) {
   gridSize = parseInt(e.target.value);
   deleteGrid();
-  // createGrid();
+  createGrid();
 });
 
 function deleteGrid() {
