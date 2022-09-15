@@ -43,18 +43,27 @@ createGrid();
 let boxes = document.querySelectorAll(".rowDiv");
 let rows = document.querySelectorAll(".boardRow");
 
+function deleteGrid() {
+  boxes.forEach((item) => {
+    item.remove();
+  });
+  rows.forEach((item) => {
+    item.remove();
+  });
+}
+
 boxes.forEach((item) => {
   item.addEventListener("mouseover", changeColor);
-  item.addEventListener("mousedown", changeColor);
+  item.addEventListener("mouseenter", changeColor);
 });
 
 function changeColor(e) {
   if (isRandom === 0) {
-    if (e.type === "mouseover" && mouseDown) {
+    if (e.type === "mouseenter" && mouseDown) {
       e.target.style.backgroundColor = `#${color}`;
     }
   } else {
-    if (e.type === "mouseover" && mouseDown) {
+    if (e.type === "mouseenter" && mouseDown) {
       e.target.style.backgroundColor = `#${random}`;
     }
   }
@@ -108,12 +117,3 @@ gridChanger.addEventListener("change", function (e) {
   deleteGrid();
   createGrid();
 });
-
-function deleteGrid() {
-  boxes.forEach((item) => {
-    item.remove();
-  });
-  rows.forEach((item) => {
-    item.remove();
-  });
-}
