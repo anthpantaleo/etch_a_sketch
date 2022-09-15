@@ -43,15 +43,6 @@ createGrid();
 let boxes = document.querySelectorAll(".rowDiv");
 let rows = document.querySelectorAll(".boardRow");
 
-function deleteGrid() {
-  boxes.forEach((item) => {
-    item.remove();
-  });
-  rows.forEach((item) => {
-    item.remove();
-  });
-}
-
 boxes.forEach((item) => {
   item.addEventListener("mouseover", changeColor);
   item.addEventListener("mouseenter", changeColor);
@@ -90,7 +81,7 @@ function randomColor() {
     let getRandomColor = Math.floor(Math.random() * 16777215).toString(16);
 
     random = getRandomColor;
-  }, 30);
+  }, 20);
   isRandom = 1;
 }
 
@@ -116,4 +107,26 @@ gridChanger.addEventListener("change", function (e) {
   gridSize = parseInt(e.target.value);
   deleteGrid();
   createGrid();
+  addListeners();
 });
+
+function deleteGrid() {
+  let oldboxes = document.querySelectorAll(".rowDiv");
+  let oldrows = document.querySelectorAll(".boardRow");
+  oldrows.forEach((item) => {
+    item.remove();
+  });
+  oldboxes.forEach((item) => {
+    item.remove();
+  });
+}
+
+function addListeners() {
+  let newBoxes = document.querySelectorAll(".rowDiv");
+  let newrows = document.querySelectorAll(".boardRow");
+
+  newBoxes.forEach((item) => {
+    item.addEventListener("mouseover", changeColor);
+    item.addEventListener("mouseenter", changeColor);
+  });
+}
