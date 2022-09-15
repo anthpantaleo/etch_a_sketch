@@ -33,14 +33,40 @@
             <div class="">Eraser</div>
             <div><button class="eraser"></button></div>
           </div>
-          <div class="buttoncolrow"></div>
+          <div class="buttoncolrow">
+            <div class="buttoncolrow">
+              <label class="colorPickerLabel" for="picker">Custom</label
+              ><input
+                type="color"
+                name="picker"
+                class="colorPicker"
+                value="#000000"
+              />
+            </div>
+          </div>
         </div>
+
         <div class="buttoncol3">
           <div class="buttoncolrow">
             <div class="">Rainbow Time</div>
             <div><button class="rainbow">?</button></div>
           </div>
-          <div class="buttoncolrow"></div>
+          <div class="buttoncolrow">
+            <div class="buttoncolrow">
+              <label for="gridSize" class="gridSizeLabel"
+                >Grid Size (16-50)</label
+              >
+              <input
+                type="range"
+                class="gridSize"
+                list="tickmarks"
+                name="gridSize"
+                min="16"
+                max="40"
+                value="16"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </div>

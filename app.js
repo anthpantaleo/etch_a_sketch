@@ -32,6 +32,7 @@ function addElement(num, divHeight, divWidth) {
       rowDiv.style.height = `${divHeight}px`;
       rowDiv.style.width = `${divWidth}px`;
       rowDiv.classList.add("rowDiv");
+      rowDiv.setAttribute("draggable", false);
       div.appendChild(rowDiv);
     }
   }
@@ -39,7 +40,8 @@ function addElement(num, divHeight, divWidth) {
 
 createGrid();
 
-const boxes = document.querySelectorAll(".rowDiv");
+let boxes = document.querySelectorAll(".rowDiv");
+let rows = document.querySelectorAll(".boardRow");
 
 boxes.forEach((item) => {
   item.addEventListener("mouseover", changeColor);
@@ -85,8 +87,33 @@ function randomColor() {
 
 const clearAll = document.querySelector(".clearAll");
 
-clearAll.addEventListener("click", function () {
+let clearBoard = clearAll.addEventListener("click", function () {
   boxes.forEach((item) => {
     item.style.backgroundColor = `#${eraserColor}`;
   });
 });
+
+const colorPicker = document.querySelector(".colorPicker");
+
+colorPicker.addEventListener("change", function (e) {
+  preslice = e.target.value;
+  color = preslice.slice(1);
+  isRandom = 0;
+});
+
+const gridChanger = document.querySelector(".gridSize");
+
+let forEachGridChange = gridChanger.addEventListener("change", function (e) {
+  gridSize = parseInt(e.target.value);
+  deleteGrid();
+  // createGrid();
+});
+
+function deleteGrid() {
+  boxes.forEach((item) => {
+    item.remove();
+  });
+  rows.forEach((item) => {
+    item.remove();
+  });
+}

@@ -80,7 +80,6 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid black;
 }
 
 .buttoncolrow div {
@@ -141,6 +140,20 @@ button {
 .clearAll:hover {
   background-color: #e63946;
   color: white;
+}
+
+.colorPickerLabel {
+  margin: 10px;
+}
+
+.gridSize {
+  width: 70px;
+  height: 30px;
+  font-size: large;
+}
+
+.gridSizeLabel {
+  margin: 10px;
 }
 
 .footer {
