@@ -46,15 +46,16 @@ let rows = document.querySelectorAll(".boardRow");
 boxes.forEach((item) => {
   item.addEventListener("mouseover", changeColor);
   item.addEventListener("mouseenter", changeColor);
+  item.addEventListener("click", changeColor);
 });
 
 function changeColor(e) {
   if (isRandom === 0) {
-    if (e.type === "mouseenter" && mouseDown) {
+    if ((e.type === "mouseenter" && mouseDown) || e.type === "mousedown") {
       e.target.style.backgroundColor = `#${color}`;
     }
   } else {
-    if (e.type === "mouseenter" && mouseDown) {
+    if ((e.type === "mouseenter" && mouseDown) || e.type === "mousedown") {
       e.target.style.backgroundColor = `#${random}`;
     }
   }
@@ -126,6 +127,7 @@ function addListeners() {
   newBoxes.forEach((item) => {
     item.addEventListener("mouseover", changeColor);
     item.addEventListener("mouseenter", changeColor);
+    item.addEventListener("click", changeColor);
   });
   let newClearAll = document.querySelector(".clearAll");
   newClearAll.addEventListener("click", function () {
