@@ -15,4 +15,5 @@ This is the Etch a Sketch Project from The Odin Project. I wanted to take a diff
 Went well! Was difficult, but happy I finished it. It's a bit spaghetti codey, but I will come back later and fix it.
 
 Live: https://anthpantaleo.github.io/etch_a_sketch
+
 Repo: https://github.com/anthpantaleo/etch_a_sketch
